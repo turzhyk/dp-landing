@@ -2,6 +2,7 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./index.css";
+import BusinesscardCalculator from "./Calculators/BusinesscardCalculator";
 
 function App() {
   return (
@@ -41,40 +42,9 @@ function App() {
             Wizytówki
           </a>
         </nav>
-        <div className="right outline">
+        <div className="right">
           {" "}
-          <div className="p-6">
-            <h1>Wizytówki</h1>
-            <h2>Kalkulator ceny</h2>
-            <div>
-              <div className="label">Rozmiar</div>
-              <div className="flex items-center gap-4">
-                <input className="w-15" type="number" />
-                <p>x</p>
-                <input className="w-15" type="number" />
-                <p>cm</p>
-              </div>
-              <div className="label mt-10">Kolor</div>
-              <select className="w-60 text-right" value={"Biały"}>
-                <option>Biały</option>
-                <option>Czarny</option>
-                <option>Przezroczysty matowy</option>
-                <option>Czerwony</option>
-              </select>
-            </div>
-          </div>
-          <div className="footer ">
-            <p>
-              <h2>Cena</h2>
-              <h1>123,00zł</h1>
-            </p>
-            <p className="text-right font-medium">
-              Chcesz <strong>zamówić?</strong>
-              <br /> <strong>Wyślij</strong> do nas e-maila
-              <br />
-             <strong>printing.internationalpl@gmail.com</strong> 
-            </p>
-          </div>
+          <BusinesscardCalculator/>
         </div>
       </div>
     </>
