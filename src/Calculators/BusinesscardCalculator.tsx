@@ -23,13 +23,13 @@ export default function BusinesscardCalculator() {
   const [color, setColor] = useState<string>("4+0");
   const [paper, setPaper] = useState<string>("300");
   const [coating, setCoating] = useState<string>("Bez wykonczenia");
-  const [quantity, setQuantity] = useState<number>(100);
+  const [quantity, setQuantity] = useState<string>("100");
   const getPrice = () => {
     return (
       (printTypePrice[color] +
         paperTypePrice[paper] +
         finishTypePrice[coating]) *
-      quantity
+      parseInt(quantity)
     );
   };
   return (
@@ -71,13 +71,19 @@ export default function BusinesscardCalculator() {
             onChange={setCoating}
             active={coating}
           />
-          <Slider
+          {/* <Slider
             name="Ilość"
             min={0}
             max={1000}
             onChange={setQuantity}
             active={quantity}
             stepList={[10, 20, 50, 100, 200, 500, 1000]}
+          /> */}
+          <Select
+            name="Ilość"
+            values={["50", "100", "250"]}
+            onChange={setQuantity}
+            active={quantity}
           />
         </div>
         <PriceFooter value={getPrice()} />
