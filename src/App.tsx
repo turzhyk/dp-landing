@@ -42,19 +42,18 @@ const Services = () => {
 function App() {
   return (
     <>
-     
-      <BrowserRouter> 
-      <header >
-        <Link to={"/"}>Digital Printing</Link>
-        <div className="flex gap-4">
-          <a>O Nas</a>
-          <a>Dostawa</a>
-        </div>
-        <div className="flex items-center gap-4">
-          <img src="/svg/phone_icon.svg" width={30} />
-          <span>732 853 845</span>
-        </div>
-      </header>
+      <BrowserRouter>
+        <header>
+          <Link to={"/"}>Digital Printing</Link>
+          <div className="flex gap-4">
+            <a>O Nas</a>
+            <a>Dostawa</a>
+          </div>
+          <div className="flex items-center gap-4">
+            <img src="/svg/phone_icon.svg" width={30} />
+            <span>732 853 845</span>
+          </div>
+        </header>
         <Routes>
           <Route path="/services/wizytowki" element={<Services />} />
           <Route path="/" element={<Home />} />
