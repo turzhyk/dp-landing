@@ -11,9 +11,8 @@ export default function ContactForm() {
   const [validPhone, setValidPhone] = useState<boolean>(true);
   const [validEmail, setValidEmail] = useState<boolean>(true);
 
-
- const phoneRegex = /^(?:\+48\s?)?\d{3}\s?\d{3}\s?\d{3}$/;
- const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  const phoneRegex = /^(?:\+48\s?)?\d{3}\s?\d{3}\s?\d{3}$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,12 +44,11 @@ export default function ContactForm() {
     if (name == "") setValidName(false);
     else setValidName(true);
 
-    setValidPhone(phoneRegex.test(phone||""));
-    setValidEmail(emailRegex.test(email||""));
+    setValidPhone(phoneRegex.test(phone || ""));
+    setValidEmail(emailRegex.test(email || ""));
   }, [name, email, phone]);
   return (
     <section className="contactform-block outline">
-    
       <h1>Złoż zamówienie online</h1>
       <form onSubmit={handleSubmit} className="">
         <div className="wrapper mt-10">
@@ -68,14 +66,14 @@ export default function ContactForm() {
             <input
               type="tel"
               placeholder="Numer telefonu"
-                className={"small-form outline " + (validPhone ? "" : "invalid")}
+              className={"small-form outline " + (validPhone ? "" : "invalid")}
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
             ></input>
             <input
               type="email"
               placeholder="Adres e-mail"
-             className={"small-form outline " + (validEmail ? "" : "invalid")}
+              className={"small-form outline " + (validEmail ? "" : "invalid")}
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             ></input>

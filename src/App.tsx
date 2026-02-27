@@ -5,6 +5,7 @@ import "./index.css";
 import BusinesscardCalculator from "./Calculators/BusinesscardCalculator";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Home from "./Components/Home";
+import { Header } from "./Components/Header/Header";
 const Services = () => {
   return (
     <div className="wrapper">
@@ -43,7 +44,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <header>
+        {/* <header>
           <Link to={"/"}>Digital Printing</Link>
           <div className="flex gap-4">
             <a>O Nas</a>
@@ -53,7 +54,8 @@ function App() {
             <img src="/svg/phone_icon.svg" width={30} />
             <span>732 853 845</span>
           </div>
-        </header>
+        </header> */}
+        <Header/>
         <Routes>
           <Route path="/services/wizytowki" element={<Services />} />
           <Route path="/" element={<Home />} />

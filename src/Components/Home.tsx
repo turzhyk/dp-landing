@@ -2,11 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServiceItem from "./ServiceItem";
 import ContactForm from "./ContactForm";
+import { DlaczegoMy } from "./WhyUsBlock";
+import { OpinieKlientow } from "./OpinieBlock";
+
 
 export default function Home() {
   return (
     <div className="home-wrapper">
-      <section className="home-banner">
+      <section className="home-banner mt-20">
         <div className="flex-1">
           <div className="text-4xl text-[#dea215] mb-10 text-left">
             Digital Printing
@@ -48,11 +51,40 @@ export default function Home() {
             href="/services/wizytowki"
             description="dasda as da dawd awdaawd aw d"
           />
+          <ServiceItem
+            title="Wizytówki"
+            imageUrl="/services-pictures/56.png"
+            href="/services/wizytowki"
+            description="dasda as da dawd awdaawd aw d"
+          />
+          <ServiceItem
+            title="Wizytówki"
+            imageUrl="/services-pictures/56.png"
+            href="/services/wizytowki"
+            description="dasda as da dawd awdaawd aw d"
+          />
+          <ServiceItem
+            title="Wizytówki"
+            imageUrl="/services-pictures/56.png"
+            href="/services/wizytowki"
+            description="dasda as da dawd awdaawd aw d"
+          />
+          <ServiceItem
+            title="Wizytówki"
+            imageUrl="/services-pictures/56.png"
+            href="/services/wizytowki"
+            description="dasda as da dawd awdaawd aw d"
+          />
+          <ServiceItem
+            title="Wizytówki"
+            imageUrl="/services-pictures/56.png"
+            href="/services/wizytowki"
+            description="dasda as da dawd awdaawd aw d"
+          />
         </div>
       </section>
-      <section className="whyus-block">
-        <h1>Wybieraj nas!</h1>
-      </section>
+      <DlaczegoMy/>
+      <OpinieKlientow/>
       <ContactForm/>
     </div>
   );
