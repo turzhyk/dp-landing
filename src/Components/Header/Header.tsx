@@ -48,12 +48,12 @@ export const Header = () => {
               <Link to="/">O nas</Link>
             </li>
 
-            <li className={styles.dropdown_border}>
+            {/* <li className={styles.dropdown_border}>
               <Link to="/">Usługi projektowania</Link>
               <button className="ml-3">
                 <img src="/svg/arrow_down.svg" />
               </button>
-            </li>
+            </li> */}
             {/* <li className={styles.dropdown_border}>
               <Link to="/">Usługi biurowe</Link>
               <div
@@ -82,7 +82,7 @@ export const Header = () => {
                 <img src="/svg/arrow_down.svg" />
               </button>
             </li> */}
-            <li className={styles.dropdown_border}>
+            {/* <li className={styles.dropdown_border}>
               <Link to="/services"> Usługi druku</Link>
               <div
                 className={styles.menu + " " + styles.tab + " border-default"}
@@ -110,7 +110,7 @@ export const Header = () => {
               <button className="ml-3">
                 <img src="/svg/arrow_down.svg" />
               </button>
-            </li>
+            </li> */}
             {/* <li className={styles.dropdown_border}>
               <Link to="/shop">Sklep</Link>
               <button className="ml-3">

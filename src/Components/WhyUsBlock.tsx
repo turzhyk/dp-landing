@@ -22,7 +22,7 @@ export function DlaczegoMy() {
 
             <div className="flex gap-6">
               <div>
-                <p className="text-3xl font-bold text-blue-600">5+</p>
+                <p className="text-3xl font-bold text-blue-600">8+</p>
                 <p className="text-gray-500 text-sm">
                   lat doświadczenia
                 </p>

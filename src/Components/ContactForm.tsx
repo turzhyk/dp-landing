@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-export default function ContactForm() {
+export default function ContactForm({options}:{options:string}) {
   const [name, setName] = useState<string>();
   const [phone, setPhone] = useState<string>();
   const [email, setEmail] = useState<string>();
@@ -20,7 +20,7 @@ export default function ContactForm() {
       name: name,
       from_email: email,
       phone: phone,
-      message: message,
+      message: "GENERATED: "+ options+" message:"+message,
     };
 
     emailjs
@@ -48,7 +48,7 @@ export default function ContactForm() {
     setValidEmail(emailRegex.test(email || ""));
   }, [name, email, phone]);
   return (
-    <section className="contactform-block outline">
+    <section className="contactform-block outline" id="contact">
       <h1>Złoż zamówienie online</h1>
       <form onSubmit={handleSubmit} className="">
         <div className="wrapper mt-10">

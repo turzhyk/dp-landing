@@ -3,42 +3,22 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./index.css";
 import BusinesscardCalculator from "./Calculators/BusinesscardCalculator";
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, Outlet, useLocation } from "react-router-dom";
 import Home from "./Components/Home";
 import { Header } from "./Components/Header/Header";
-const Services = () => {
-  return (
-    <div className="wrapper">
-      <nav className="left">
-        <h3>Nasze usługi</h3>
-        <Link to={"/services/wizytowki"} className="selected">
-          <img src="/svg/druk_icon.svg" />
-          Wizytówki
-        </Link>
-        <Link to={"/services/wizytowki"} className="outline">
-          <img src="/svg/druk_icon.svg" />
-          Wizytówki
-        </Link>
-        <a className="outline">
-          <img src="/svg/szyba2_icon.svg" />
-          Wizytówki
-        </a>
-        <a className="outline">
-          <img src="/svg/druk_icon.svg" />
-          Wizytówki
-        </a>
-        <a className="outline">
-          <img src="/svg/wizytowki_icon.svg" />
-          Wizytówki
-        </a>
-      </nav>
-      <div className="right">
-        {" "}
-        <BusinesscardCalculator />
-      </div>
-    </div>
-  );
-};
+import BannerCalculator from "./Calculators/BannerCalculator";
+import StickerCalculator from "./Calculators/StickerCalculator";
+import FlyerCalculator from "./Calculators/FlyerCalculator";
+import { Services } from "./Components/Services";
+
+// interface IServiceLink {
+//   name:string;
+//   url:string;
+// }
+// const ServiceLinks:IServiceLink[] = [
+//   {name:"",url:""},
+// ];
+
 
 function App() {
   return (
@@ -55,9 +35,14 @@ function App() {
             <span>732 853 845</span>
           </div>
         </header> */}
-        <Header/>
+        <Header />
         <Routes>
-          <Route path="/services/wizytowki" element={<Services />} />
+          <Route path="/services" element={<Services />}>
+            <Route path="wizytowki" element={<BusinesscardCalculator />} />
+            <Route path="plakaty" element={<BannerCalculator />} />
+            <Route path="naklejki" element={<StickerCalculator />} />
+            <Route path="ulotki" element={<FlyerCalculator />} />
+          </Route>
           <Route path="/" element={<Home />} />
         </Routes>
       </BrowserRouter>

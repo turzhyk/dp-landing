@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Select } from "../Components/Select";
 import Slider from "../Components/Slider";
 import PriceFooter from "../Components/PriceFooter";
+import ContactForm from "../Components/ContactForm";
 
 const printTypePrice: Record<string, number> = {
   "4+0": 0.5,
@@ -59,8 +60,13 @@ export default function BusinesscardCalculator() {
             onChange={setColor}
             active={color}
           />
+          <p>
+            <strong>4+0</strong> przod kolorowy, tył nie drukujemy;<br/>
+            <strong>4+1</strong> przod kolorowy, tył c/b; <br/>
+            <strong>4+4</strong> przod kolorowy, tył kolorowy;
+          </p>
           <Select
-            name="Typ papieru"
+            name="Typ papieru (g/m²)"
             values={["250", "300", "350"]}
             onChange={setPaper}
             active={paper}
@@ -88,6 +94,22 @@ export default function BusinesscardCalculator() {
         </div>
         <PriceFooter value={getPrice()} />
       </div>
+      <div className="">
+              <ContactForm
+                options={
+                  "WIZYTÓWKI color: " +
+                  color +
+                  "paper: " +
+                  paper +
+                  "coating: " +
+                  coating +
+                  " quantity: " +
+                  quantity +
+                  " totalprice: " +
+                  getPrice()
+                }
+              />
+            </div>
     </>
   );
 }

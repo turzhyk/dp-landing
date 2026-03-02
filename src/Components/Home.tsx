@@ -27,7 +27,7 @@ export default function Home() {
             <a className="right-btn " href="#services">
               Oblicz ceny
             </a>
-            <a className="left-btn" href="#services">
+            <a className="left-btn" href="#contact">
               Złoż zamówienie
             </a>
           </nav>
@@ -37,7 +37,7 @@ export default function Home() {
         <img className="w-250 h-170 ml-50" src="/bizhub.png" />
       </section>
       <section className="services-block" id="services">
-        <h1>Usługi</h1>
+        <h1>Usługi druku</h1>
         <div className="services-holder mt-10">
           <ServiceItem
             title="Wizytówki"
@@ -46,34 +46,34 @@ export default function Home() {
             description=""
           />
           <ServiceItem
-            title="Wizytówki"
+            title="Plakaty"
             imageUrl="/services-pictures/56.png"
-            href="/services/wizytowki"
-            description="dasda as da dawd awdaawd aw d"
+            href="/services/plakaty"
+            description=""
           />
           <ServiceItem
-            title="Wizytówki"
+            title="Naklejki"
             imageUrl="/services-pictures/56.png"
-            href="/services/wizytowki"
-            description="dasda as da dawd awdaawd aw d"
+            href="/services/naklejki"
+            description=""
           />
           <ServiceItem
-            title="Wizytówki"
-            imageUrl="/services-pictures/56.png"
-            href="/services/wizytowki"
-            description="dasda as da dawd awdaawd aw d"
+            title="Ulotki"
+            imageUrl="/services-pictures/flyers.jpg"
+            href="/services/ulotki"
+            description=""
           />
           <ServiceItem
-            title="Wizytówki"
+            title="Naklejki na witrynę"
             imageUrl="/services-pictures/56.png"
-            href="/services/wizytowki"
-            description="dasda as da dawd awdaawd aw d"
+            href="/services/witryna"
+            description=""
           />
           <ServiceItem
-            title="Wizytówki"
+            title="Zdjęcia"
             imageUrl="/services-pictures/56.png"
-            href="/services/wizytowki"
-            description="dasda as da dawd awdaawd aw d"
+            href="/services/zdjecia"
+            description=""
           />
           <ServiceItem
             title="Wizytówki"
@@ -85,7 +85,7 @@ export default function Home() {
       </section>
       <DlaczegoMy/>
       <OpinieKlientow/>
-      <ContactForm/>
+      <ContactForm options=""/>
     </div>
   );
 }

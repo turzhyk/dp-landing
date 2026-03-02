@@ -2,10 +2,10 @@ import React from 'react'
 
 export default function PriceFooter({value}:{ value:number}) {
   return (
-   <div className="footer ">
+   <div className="price-footer ">
             <p>
               <h2>Cena</h2>
-              <h1>{value}zł</h1>
+              <h1>{value.toFixed(2)}zł</h1>
             </p>
             <p className="text-right font-medium">
               Chcesz <strong>zamówić?</strong>
