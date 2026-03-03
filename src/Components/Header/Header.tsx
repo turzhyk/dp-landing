@@ -8,6 +8,7 @@ export const Header = () => {
 
   const handleBurgerClick = () => {};
   useEffect(() => {
+    return;
     const onScroll = () => {
       setIsFull(window.scrollY < 50);
     };
@@ -23,7 +24,7 @@ export const Header = () => {
         <img
           className={styles.logo}
           src="/svg/logo3.svg"
-          alt="Digital Printing"
+          alt="DP"
         />
         <div className={"mt-2 flex flex-col justify-center"}>
           <div className="flex">

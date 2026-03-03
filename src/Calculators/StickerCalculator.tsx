@@ -1,17 +1,16 @@
 import React, { useState } from "react";
 import { Select } from "../Components/Select";
-import Slider from "../Components/Slider";
 import PriceFooter from "../Components/PriceFooter";
 import ContactForm from "../Components/ContactForm";
 
 const sizePrice: Record<string, number> = {
   "3x3 cm": 0.4,
   "6x6 cm": 1.2,
-  "10x10 cm": 2
+  "10x10 cm": 2,
 };
 const paperTypePrice: Record<string, number> = {
- "matowy": 0,
- "błyszczący": 0.2 
+  matowy: 0,
+  błyszczący: 0.2,
 };
 
 export default function StickerCalculator() {
@@ -19,7 +18,7 @@ export default function StickerCalculator() {
   const [paper, setPaper] = useState<string>("matowy");
   const [quantity, setQuantity] = useState<string>("5");
   const getPrice = () =>
-    (sizePrice[size] + paperTypePrice[paper] )* parseInt(quantity);
+    (sizePrice[size] + paperTypePrice[paper]) * parseInt(quantity);
   return (
     <>
       <div className="p-6 panel outline">
@@ -63,20 +62,20 @@ export default function StickerCalculator() {
         </div>
         <PriceFooter value={getPrice()} />
       </div>
-      <div className="">
-              <ContactForm
-                options={
-                  "NAKLEJKI size: " +
-                  size +
-                  "paper: " +
-                  paper +
-                  " quantity: " +
-                  quantity +
-                  " totalprice: " +
-                  getPrice()
-                }
-              />
-            </div>
+      {/* <div className="">
+        <ContactForm
+          options={
+            "NAKLEJKI size: " +
+            size +
+            "paper: " +
+            paper +
+            " quantity: " +
+            quantity +
+            " totalprice: " +
+            getPrice()
+          }
+        />
+      </div> */}
     </>
   );
 }

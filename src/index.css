@@ -146,28 +146,6 @@ body {
   /* font-weight: 700; */
   box-shadow: 0px 0px 20px 0 #ffff0082;
 }
-.home-banner .left-top {
-  width: 5rem;
-  height: 0.5rem;
-  background-color: white;
-
-  position: absolute;
-  z-index: 10;
-  top: 2rem;
-  left: 2.36rem;
-  /* transform: rotate(90deg); */
-}
-
-.home-banner .left-left {
-  width: 5rem;
-  height: 0.5rem;
-  background-color: white;
-  position: absolute;
-  z-index: 10;
-  top: 4.5rem;
-  left: 0.1rem;
-  transform: rotate(90deg);
-}
 @keyframes headerButtons {
   0%,
   50% {
@@ -260,6 +238,11 @@ header {
   padding-top: 10rem;
   gap: 1rem;
   justify-content: center;
+}
+@media (max-width: 1000px) {
+.wrapper {
+  flex-direction: column;
+}
 }
 .left {
   flex: 0.4;
@@ -607,8 +590,8 @@ textarea:focus {
   padding: auto;
 }
 
-@media (min-width: 600px) {
+@media (max-width: 1000px) {
   .services-holder {
-    grid-template: auto auto;
+   grid-template-columns: auto auto;
   }
 }

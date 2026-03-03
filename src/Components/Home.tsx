@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 import ServiceItem from "./ServiceItem";
 import ContactForm from "./ContactForm";
-import { DlaczegoMy } from "./WhyUsBlock";
-import { OpinieKlientow } from "./OpinieBlock";
+import { DlaczegoMy } from "./WhyUsBlock/WhyUsBlock";
+import { OpinieKlientow } from "./OpinieBlock/OpinieBlock";
+
 
 
 export default function Home() {
@@ -31,8 +32,6 @@ export default function Home() {
               Złoż zamówienie
             </a>
           </nav>
-          <div className="left-top " />
-          <div className="left-left " />
         </div>
         <img className="w-250 h-170 ml-50" src="/bizhub.png" />
       </section>
