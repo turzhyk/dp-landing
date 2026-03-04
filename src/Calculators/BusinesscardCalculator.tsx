@@ -56,7 +56,7 @@ export default function BusinesscardCalculator() {
           </div> */}
           <Select
             name="Kolor druku"
-            values={["4+0", "4+1", "4+4"]}
+            values={Object.keys(printTypePrice)}
             onChange={setColor}
             active={color}
           />
@@ -67,13 +67,13 @@ export default function BusinesscardCalculator() {
           </p>
           <Select
             name="Typ papieru (g/m²)"
-            values={["250", "300", "350"]}
+            values={Object.keys(paperTypePrice)}
             onChange={setPaper}
             active={paper}
           />
           <Select
             name="Typ wykonczenia"
-            values={["Bez wykonczenia", "Matowe", "Błyszczące", "Soft-Touch"]}
+            values={Object.keys(finishTypePrice)}
             onChange={setCoating}
             active={coating}
           />

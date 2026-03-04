@@ -17,7 +17,7 @@ export const Header = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   return (
-    <header className={`${styles.header}  ${!isFull ? styles.shrink : ""}`}>
+    <header className={styles.header}>
   
 
       <Link to="/" className={"flex " + styles.logo_wrapper}>

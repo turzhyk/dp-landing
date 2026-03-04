@@ -4,9 +4,9 @@ import PriceFooter from "../Components/PriceFooter";
 import ContactForm from "../Components/ContactForm";
 
 const sizePrice: Record<string, number> = {
-  "3x3 cm": 0.4,
-  "6x6 cm": 1.2,
-  "10x10 cm": 2,
+  "3x3": 0.4,
+  "6x6": 1.2,
+  "10x10": 2,
 };
 const paperTypePrice: Record<string, number> = {
   matowy: 0,
@@ -14,7 +14,7 @@ const paperTypePrice: Record<string, number> = {
 };
 
 export default function StickerCalculator() {
-  const [size, setSize] = useState<string>("3x3 cm");
+  const [size, setSize] = useState<string>(Object.keys(sizePrice)[0]);
   const [paper, setPaper] = useState<string>("matowy");
   const [quantity, setQuantity] = useState<string>("5");
   const getPrice = () =>
@@ -24,10 +24,10 @@ export default function StickerCalculator() {
       <div className="p-6 panel outline">
         <h1>Naklejki</h1>
         <p>
-          Zaprojektuj wizytówki, które zrobią doskonałe pierwsze wrażenie.
-          Drukujemy wizytówki w najwyższej jakości, z opcją wyboru formatu,
-          papieru oraz dodatkowych uszlachetnień. Sprawdź cenę w naszym
-          kalkulatorze i zamów online w kilka minut.
+          Stwórz naklejki, które skutecznie promują Twoją firmę lub produkt.
+          Oferujemy druk naklejek w dowolnym formacie, na różnych materiałach –
+          idealnych do zastosowań wewnętrznych i zewnętrznych. Sprawdź wycenę w
+          kalkulatorze i zamów online w kilka chwil.
         </p>
       </div>
       <div className="panel outline">
@@ -42,14 +42,14 @@ export default function StickerCalculator() {
           </div> */}
 
           <Select
-            name="Rozmiar"
-            values={["3x3 cm", "6x6 cm", "10x10 cm"]}
+            name="Rozmiar (cm)"
+            values={Object.keys(size)}
             onChange={setSize}
             active={size}
           />
           <Select
             name="Typ papieru"
-            values={["matowy", "błyszczący"]}
+            values={Object.keys(paperTypePrice)}
             onChange={setPaper}
             active={paper}
           />

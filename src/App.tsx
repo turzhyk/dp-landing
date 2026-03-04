@@ -10,6 +10,7 @@ import BannerCalculator from "./Calculators/BannerCalculator";
 import StickerCalculator from "./Calculators/StickerCalculator";
 import FlyerCalculator from "./Calculators/FlyerCalculator";
 import { Services } from "./Components/Services";
+import WindowStickerCalculator from "./Calculators/WindowStickerCalculator";
 
 // interface IServiceLink {
 //   name:string;
@@ -42,6 +43,7 @@ function App() {
             <Route path="plakaty" element={<BannerCalculator />} />
             <Route path="naklejki" element={<StickerCalculator />} />
             <Route path="ulotki" element={<FlyerCalculator />} />
+             <Route path="witryna" element={<WindowStickerCalculator />} />
           </Route>
           <Route path="/" element={<Home />} />
         </Routes>

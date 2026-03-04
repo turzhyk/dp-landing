@@ -153,6 +153,11 @@
   .grid {
     grid-template-columns: 1fr;
   }
+  .ratingBox{
+    flex-direction: column;
+    height: auto;
+    padding: 1rem 0rem;
+  }
 
   .title {
     font-size: 26px;

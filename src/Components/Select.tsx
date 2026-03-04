@@ -12,7 +12,7 @@ export const Select = ({ name, values, active, onChange }: SelectProps) => {
     <>
       <div className="label mt-10">{name}</div>
       <select
-        className="w-60 text-right"
+        className="w-60  text-right"
         value={active}
         onChange={(e) => onChange(e.target.value)}
       >

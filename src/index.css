@@ -30,7 +30,7 @@ body {
   margin: 0;
   /* display: flex; */
   /* padding: 2rem; */
-  place-items: center;
+  /* place-items: center; */
   min-width: 320px;
   min-height: 100vh;
   background-color: #e9e9e9;
@@ -266,6 +266,7 @@ header {
 .left a {
   cursor: pointer;
   display: flex;
+
   gap: 1rem;
   line-height: 3.7rem;
   border-radius: 6px;
@@ -362,7 +363,7 @@ select {
   background-color: #e4e4e4;
   border-radius: 6px;
   outline: 1px solid rgb(167, 167, 179);
-  height: 2rem;
+  height: 3rem;
   text-align: center;
   font-weight: 600;
 }
@@ -424,12 +425,13 @@ input[type="number"] {
 }
 
 .services-block {
-  width: auto;
+  width: 100%;
 
-  padding: 4rem 10rem;
+  padding: 4rem 0;
   overflow: hidden;
   margin: auto;
 }
+
 .services-item {
   width: 20rem;
   height: 18rem;
@@ -467,6 +469,8 @@ input[type="number"] {
 }
 .services-holder {
   display: grid;
+  width: 100%;
+  justify-content: center;
   grid-template-columns: auto auto auto auto;
 
   gap: 1rem;
@@ -531,7 +535,7 @@ input[type="number"] {
   display: flex;
   width: 100%;
   gap: 1rem;
-
+  padding: 4rem 1rem 1rem;
   justify-content: space-between;
   margin-bottom: 1rem;
 }
@@ -593,5 +597,53 @@ textarea:focus {
 @media (max-width: 1000px) {
   .services-holder {
    grid-template-columns: auto auto;
+  }
+}
+
+@media (max-width: 800px) {
+  .services-holder {
+   grid-template-columns: 90%;
+  }
+  .services-item{
+    width: 100%;
+    height: 12rem;
+  }
+  .services-item .img-container{
+    height: 40%;
+  }
+  .services-item a{
+    height: 3rem;
+    line-height: 3rem;
+  }
+  .contactform-block{
+    width: 100%;
+    
+  }
+  .right  .price-footer{
+    flex-direction: column;
+    height: auto
+  }
+  .right  .price-footer p{
+    text-align: center;
+  }
+  .left{
+    max-width: 90%;
+    margin-left: 1rem;
+    display: grid;
+    grid-template-columns: auto auto;
+  
+  }
+  .left a{
+    line-height: normal;
+    vertical-align:middle;
+    text-align: center;
+    display:inline;
+  }
+  .contactform-block .left{
+    display: flex;
+    flex-direction: column;
+  }
+  .contactform-block .wrapper{
+    padding: 4rem 1rem 1rem;
   }
 }

@@ -27,10 +27,10 @@ export default function FlyerCalculator() {
       <div className="p-6 panel outline">
         <h1>Ulotki</h1>
         <p>
-          Zaprojektuj wizytówki, które zrobią doskonałe pierwsze wrażenie.
-          Drukujemy wizytówki w najwyższej jakości, z opcją wyboru formatu,
-          papieru oraz dodatkowych uszlachetnień. Sprawdź cenę w naszym
-          kalkulatorze i zamów online w kilka minut.
+          Zaprojektuj ulotki, które skutecznie przekażą Twoją ofertę. Drukujemy
+          ulotki w wielu formatach i na różnych papierach, z możliwością wyboru
+          gramatury oraz wykończenia. Sprawdź cenę w naszym kalkulatorze i złóż
+          zamówienie online bez wychodzenia z biura.
         </p>
       </div>
       <div className="panel outline">
@@ -47,19 +47,19 @@ export default function FlyerCalculator() {
 
             <Select
               name="Rozmiar"
-              values={["A5 jednostronnie", "Rack Card (101x228 mm) jednostronnie", "A5 dwustronnie",  "Rack Card (101x228 mm) dwustronnie"]}
+              values={Object.keys(sizePrice)}
               onChange={setSize}
               active={size}
             />
             <Select
               name="Typ papieru (g/m²)"
-              values={["80", "120", "160"]}
+              values={Object.keys(paperTypePrice)}
               onChange={setPaper}
               active={paper}
             />
             <Select
               name="Ilość"
-              values={["5", "10","20","50","100"]}
+              values={["5", "10", "20", "50", "100"]}
               onChange={setQuantity}
               active={quantity}
             />
@@ -71,19 +71,19 @@ export default function FlyerCalculator() {
         <PriceFooter value={getPrice()} />
       </div>
       <div className="">
-              <ContactForm
-                options={
-                  "ULOTKI size: " +
-                  size +
-                  "paper: " +
-                  paper +
-                  " quantity: " +
-                  quantity +
-                  " totalprice: " +
-                  getPrice()
-                }
-              />
-            </div>
+        <ContactForm
+          options={
+            "ULOTKI size: " +
+            size +
+            "paper: " +
+            paper +
+            " quantity: " +
+            quantity +
+            " totalprice: " +
+            getPrice()
+          }
+        />
+      </div>
     </>
   );
 }

@@ -51,7 +51,7 @@ export default function ContactForm({options}:{options:string}) {
     <section className="contactform-block outline" id="contact">
       <h1>Złoż zamówienie online</h1>
       <form onSubmit={handleSubmit} className="">
-        <div className="wrapper mt-10">
+        <div className="wrapper ">
           <div className="stars">
             *<br />*<br />*
           </div>
