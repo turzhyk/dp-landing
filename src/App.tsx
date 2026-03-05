@@ -11,6 +11,7 @@ import StickerCalculator from "./Calculators/StickerCalculator";
 import FlyerCalculator from "./Calculators/FlyerCalculator";
 import { Services } from "./Components/Services";
 import WindowStickerCalculator from "./Calculators/WindowStickerCalculator";
+import OfferPage from "./Components/Offer/OfferPage";
 
 // interface IServiceLink {
 //   name:string;
@@ -38,6 +39,7 @@ function App() {
         </header> */}
         <Header />
         <Routes>
+          <Route path="/offer" element={<OfferPage/>}/>
           <Route path="/services" element={<Services />}>
             <Route path="wizytowki" element={<BusinesscardCalculator />} />
             <Route path="plakaty" element={<BannerCalculator />} />

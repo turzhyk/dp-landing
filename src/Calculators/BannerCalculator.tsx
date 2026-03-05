@@ -1,28 +1,35 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Select } from "../Components/Select";
 import Slider from "../Components/Slider";
 import PriceFooter from "../Components/PriceFooter";
 import ContactForm from "../Components/ContactForm";
 
-const sizePrice: Record<string, number> = {
-  A4: 2,
-  A3: 4,
-  A2: 8,
-  A1: 16,
-  A0: 22,
-};
-const paperTypePrice: Record<string, Record<string, number>> = {
-  "80": { A4: 0, A3: 0, A2: 0, A1: 0, A0: 0 },
-  "120": { A4: 1, A3: 2, A2: 4, A1: 8, A0: 16 },
-  "160": { A4: 2, A3: 4, A2: 8, A1: 16, A0: 32 },
-};
 
 export default function BannerCalculator() {
   const [size, setSize] = useState<string>("A3");
   const [paper, setPaper] = useState<string>("80");
   const [quantity, setQuantity] = useState<string>("1");
+  const [prices, setPrices] = useState<any>(null);
+
+  useEffect(() => {
+    const loadPrices = async () => {
+      const res = await fetch("/config/prices.json");
+      const data = await res.json();
+      setPrices(data);
+    };
+
+    loadPrices();
+  }, []);
+
+  // const getPrice = () =>
+  //   (sizePrice[size] + paperTypePrice[paper][size]) * parseInt(quantity);
   const getPrice = () =>
-    (sizePrice[size] + paperTypePrice[paper][size]) * parseInt(quantity);
+    (prices.banner.sizePrice[size] +
+      prices.banner.paperTypePrice[paper][size]) *
+    parseInt(quantity);
+  if (!prices) {
+    return <div>Loading prices...</div>;
+  }
   return (
     <>
       <div className="p-6 panel outline">
@@ -48,13 +55,13 @@ export default function BannerCalculator() {
 
             <Select
               name="Rozmiar"
-              values={Object.keys(sizePrice)}
+              values={Object.keys(prices.banner.sizePrice)}
               onChange={setSize}
               active={size}
             />
             <Select
               name="Typ papieru (g/m²)"
-              values={Object.keys(paperTypePrice)}
+              values={Object.keys(prices.banner.paperTypePrice)}
               onChange={setPaper}
               active={paper}
             />
@@ -65,7 +72,7 @@ export default function BannerCalculator() {
               active={quantity}
             />
           </div>
-          <div className="p-10 ">
+          <div className="img-holder ">
             <img src={"/landing1.jpg"} className="rounded-xl" />
           </div>
         </div>

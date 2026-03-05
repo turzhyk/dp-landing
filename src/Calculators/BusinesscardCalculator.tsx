@@ -1,38 +1,37 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Select } from "../Components/Select";
 import Slider from "../Components/Slider";
 import PriceFooter from "../Components/PriceFooter";
 import ContactForm from "../Components/ContactForm";
 
-const printTypePrice: Record<string, number> = {
-  "4+0": 0.5,
-  "4+1": 0.6,
-  "4+4": 0.8,
-};
-const paperTypePrice: Record<string, number> = {
-  "250": 0,
-  "300": 0.2,
-  "350": 0.3,
-};
-const finishTypePrice: Record<string, number> = {
-  "Bez wykonczenia": 0,
-  Matowe: 0.1,
-  Błyszczące: 0.1,
-  "Soft-Touch": 0.3,
-};
+
 export default function BusinesscardCalculator() {
   const [color, setColor] = useState<string>("4+0");
   const [paper, setPaper] = useState<string>("300");
   const [coating, setCoating] = useState<string>("Bez wykonczenia");
   const [quantity, setQuantity] = useState<string>("100");
+  const [prices, setPrices] = useState<any>(null);
+
   const getPrice = () => {
     return (
-      (printTypePrice[color] +
-        paperTypePrice[paper] +
-        finishTypePrice[coating]) *
+      (prices.businessCards.printTypePrice[color] +
+        prices.businessCards.paperTypePrice[paper] +
+        prices.businessCards.finishTypePrice[coating]) *
       parseInt(quantity)
     );
   };
+  useEffect(() => {
+    const loadPrices = async () => {
+      const res = await fetch("/config/prices.json");
+      const data = await res.json();
+      setPrices(data);
+    };
+
+    loadPrices();
+  }, []);
+    if (!prices) {
+    return <div>Loading prices...</div>;
+  }
   return (
     <>
       <div className="p-6 panel outline">
@@ -56,24 +55,25 @@ export default function BusinesscardCalculator() {
           </div> */}
           <Select
             name="Kolor druku"
-            values={Object.keys(printTypePrice)}
+            values={Object.keys(prices.businessCards.printTypePrice)}
             onChange={setColor}
             active={color}
           />
           <p>
-            <strong>4+0</strong> przod kolorowy, tył nie drukujemy;<br/>
-            <strong>4+1</strong> przod kolorowy, tył c/b; <br/>
+            <strong>4+0</strong> przod kolorowy, tył nie drukujemy;
+            <br />
+            <strong>4+1</strong> przod kolorowy, tył c/b; <br />
             <strong>4+4</strong> przod kolorowy, tył kolorowy;
           </p>
           <Select
             name="Typ papieru (g/m²)"
-            values={Object.keys(paperTypePrice)}
+            values={Object.keys( prices.businessCards.paperTypePrice)}
             onChange={setPaper}
             active={paper}
           />
           <Select
             name="Typ wykonczenia"
-            values={Object.keys(finishTypePrice)}
+            values={Object.keys( prices.businessCards.finishTypePrice)}
             onChange={setCoating}
             active={coating}
           />
@@ -95,21 +95,21 @@ export default function BusinesscardCalculator() {
         <PriceFooter value={getPrice()} />
       </div>
       <div className="">
-              <ContactForm
-                options={
-                  "WIZYTÓWKI color: " +
-                  color +
-                  "paper: " +
-                  paper +
-                  "coating: " +
-                  coating +
-                  " quantity: " +
-                  quantity +
-                  " totalprice: " +
-                  getPrice()
-                }
-              />
-            </div>
+        <ContactForm
+          options={
+            "WIZYTÓWKI color: " +
+            color +
+            "paper: " +
+            paper +
+            "coating: " +
+            coating +
+            " quantity: " +
+            quantity +
+            " totalprice: " +
+            getPrice()
+          }
+        />
+      </div>
     </>
   );
 }

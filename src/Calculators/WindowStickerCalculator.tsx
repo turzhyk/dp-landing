@@ -60,8 +60,8 @@ export default function WindowStickerCalculator() {
             />
            <Slider name="Ilość literek" min={1} max={50} stepList={[]} active={quantity} onChange={setQuantity} step={1}/>
           </div>
-          <div className="p-10 ">
-            <img src={"/landing1.jpg"} className="rounded-xl" />
+          <div className="img-holder">
+            <img src={"/services-pictures/56.png"} className="rounded-xl" />
           </div>
         </div>
         <PriceFooter value={getPrice()} />

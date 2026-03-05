@@ -4,8 +4,7 @@ import ServiceItem from "./ServiceItem";
 import ContactForm from "./ContactForm";
 import { DlaczegoMy } from "./WhyUsBlock/WhyUsBlock";
 import { OpinieKlientow } from "./OpinieBlock/OpinieBlock";
-
-
+import Offer from "./Offer";
 
 export default function Home() {
   return (
@@ -36,55 +35,64 @@ export default function Home() {
         <img className="w-250 h-170 ml-50" src="/bizhub.png" />
       </section>
       <section className="services-block" id="services">
-        <h1>Usługi druku</h1>
-        <div className="services-holder mt-10">
-          <ServiceItem
-            title="Wizytówki"
-            imageUrl="/services-pictures/black-buissnes-card.webp"
-            href="/services/wizytowki"
-            description=""
-          />
-          <ServiceItem
-            title="Plakaty"
-            imageUrl="/services-pictures/56.png"
-            href="/services/plakaty"
-            description=""
-          />
-          <ServiceItem
-            title="Naklejki"
-            imageUrl="/services-pictures/56.png"
-            href="/services/naklejki"
-            description=""
-          />
-          <ServiceItem
-            title="Ulotki"
-            imageUrl="/services-pictures/flyers.jpg"
-            href="/services/ulotki"
-            description=""
-          />
-          <ServiceItem
-            title="Naklejki na witrynę"
-            imageUrl="/services-pictures/56.png"
-            href="/services/witryna"
-            description=""
-          />
-          <ServiceItem
-            title="Zdjęcia"
-            imageUrl="/services-pictures/56.png"
-            href="/services/zdjecia"
-            description=""
-          />
-          <ServiceItem
-            title="Wizytówki"
-            imageUrl="/services-pictures/56.png"
-            href="/services/wizytowki"
-            description="dasda as da dawd awdaawd aw d"
-          />
+        <div className="serices-col">
+          <h1>Usługi druku</h1>
+          <div className="services-holder mt-10">
+            <ServiceItem
+              title="Wizytówki"
+              imageUrl="/services-pictures/black-buissnes-card.webp"
+              href="/services/wizytowki"
+              description=""
+            />
+            <ServiceItem
+              title="Plakaty"
+              imageUrl="/services-pictures/56.png"
+              href="/services/plakaty"
+              description=""
+            />
+            <ServiceItem
+              title="Naklejki"
+              imageUrl="/services-pictures/56.png"
+              href="/services/naklejki"
+              description=""
+            />
+            <ServiceItem
+              title="Ulotki"
+              imageUrl="/services-pictures/flyers.jpg"
+              href="/services/ulotki"
+              description=""
+            />
+            <ServiceItem
+              title="Naklejki na witrynę"
+              imageUrl="/services-pictures/56.png"
+              href="/services/witryna"
+              description=""
+            />
+            <ServiceItem
+              title="Zdjęcia"
+              imageUrl="/services-pictures/56.png"
+              href="/services/zdjecia"
+              description=""
+            />
+            <ServiceItem
+              title="Wizytówki"
+              imageUrl="/services-pictures/56.png"
+              href="/services/wizytowki"
+              description="dasda as da dawd awdaawd aw d"
+            />
+          </div>
+        </div>
+        <div className="offer-col">
+          {" "}
+          <h1>Oferta dla restauracji</h1>
+          <div className="offer-wrapper">
+           <Offer/>
+          </div>
         </div>
       </section>
-      <DlaczegoMy/>
-      <OpinieKlientow/>
-      <ContactForm options=""/>
+      <DlaczegoMy />
+      <OpinieKlientow />
+      <ContactForm options="" />
     </div>
   );
 }
