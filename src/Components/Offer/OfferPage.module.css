@@ -14,8 +14,9 @@ width: 100%;
 }
 .rightWrapper {
  display: grid;
- grid-template-columns: auto auto auto auto;
+ grid-template-columns: 15rem 15rem 15rem 15rem;
  gap: 1rem;
+ margin-top: 2rem;
 }
 .item{
       padding: 0.5rem;
@@ -39,4 +40,10 @@ width: 100%;
 }
 .desc{
       flex-grow: 1;
+}
+
+@media screen and (max-width:1300px) {
+      .left{
+            display: none;
+      }
 }
