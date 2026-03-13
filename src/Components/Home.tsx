@@ -32,7 +32,7 @@ export default function Home() {
             </a>
           </nav>
         </div>
-        <img className="w-250 h-170 ml-50" src="/bizhub.png" />
+        <img className="w-250 h-170 ml-50" src="/118b7e96-03c3-44d3-936d-14afe57eddc5 (1).jpg" />
       </section>
       <section className="services-block" id="services">
         <div className="serices-col">
@@ -92,7 +92,8 @@ export default function Home() {
       </section>
       <DlaczegoMy />
       <OpinieKlientow />
-      <ContactForm options="" />
+      <div className="pt-20"> <ContactForm options="" /></div>
+     
     </div>
   );
 }
